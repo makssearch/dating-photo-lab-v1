@@ -1,0 +1,62 @@
+<header class="site-header">
+  <a class="brand" href="/">DATING PHOTO LAB</a>
+
+  <nav aria-label="Main navigation">
+    <a href="/articles/">Articles</a>
+    <a href="/products/">Products</a>
+    <a href="/about/">About</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    width: min(100% - 48px, var(--container));
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  nav a {
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    opacity: 0.6;
+  }
+
+  @media (max-width: 640px) {
+    .site-header {
+      width: min(100% - 32px, var(--container));
+      padding: 22px 0;
+    }
+
+    nav {
+      gap: 16px;
+    }
+
+    nav a {
+      font-size: 13px;
+    }
+
+    .brand {
+      font-size: 10px;
+    }
+  }
+</style>

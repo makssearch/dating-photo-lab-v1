@@ -1,17 +1,81 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Dating Photo Lab"
+  description="Helping people create natural, trustworthy and memorable photos that feel like real life."
+>
+  <main class="home">
+  <section class="hero">
+    <p class="eyebrow">DATING PHOTO LAB</p>
+
+    <h1>Photos that feel like you.</h1>
+
+    <p class="intro">
+  Photos can look perfectly fine and still feel nothing like you.
+  We’re interested in the ones that feel like a real moment.
+</p>
+
+    <div class="actions">
+      <a href="/articles/">Explore Articles</a>
+      <a href="/products/">View Products</a>
+    </div>
+  </section>
+
+  <section class="statement">
+    <p class="statement-label">A different way to think about photos</p>
+
+    <h2>Natural photos start with real life.</h2>
+
+    <p>
+      The best photos do not always feel like photos. They feel like a moment
+      you happened to capture — something you were doing, thinking about, or
+      enjoying.
+    </p>
+  </section>
+
+  <section class="products-preview">
+  <div class="products-heading">
+    <p class="section-label">Products</p>
+
+    <h2>For when you want better photos without making them feel staged.</h2>
+  </div>
+
+  <div class="product-list">
+    <a class="product-item" href="/products/stop-looking-awkward-in-photos/">
+      <span class="product-number">01</span>
+
+      <div>
+        <h3>Stop Looking Awkward In Photos</h3>
+        <p>Free guide</p>
+      </div>
+
+      <span class="product-arrow">→</span>
+    </a>
+
+    <a class="product-item" href="/products/50-natural-dating-photo-ideas/">
+      <span class="product-number">02</span>
+
+      <div>
+        <h3>50 Natural Dating Photo Ideas</h3>
+        <p>$5</p>
+      </div>
+
+      <span class="product-arrow">→</span>
+    </a>
+
+    <a class="product-item" href="/products/ai-dating-photo-system/">
+      <span class="product-number">03</span>
+
+      <div>
+        <h3>AI Dating Photo System</h3>
+        <p>$14.99</p>
+      </div>
+
+      <span class="product-arrow">→</span>
+    </a>
+  </div>
+</section>
+</main>
+</BaseLayout>
