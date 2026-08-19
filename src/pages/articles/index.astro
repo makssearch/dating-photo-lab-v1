@@ -18,8 +18,180 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </section>
 
-    <section class="articles-empty">
-      <p>New articles are coming soon.</p>
+    <section class="articles-list">
+      <a
+        class="article-list-item"
+        href="/articles/how-to-take-natural-photos-of-yourself-when-nobody-is-behind-the-camera/"
+      >
+        <span class="article-list-number">01</span>
+
+        <div>
+          <h2>
+            How to Take Natural Photos of Yourself When Nobody Is Behind the
+            Camera
+          </h2>
+
+          <p>Photos &amp; Camera Confidence</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
+
+      <a
+        class="article-list-item"
+        href="/articles/why-video-can-make-taking-photos-alone-feel-more-natural/"
+      >
+        <span class="article-list-number">02</span>
+
+        <div>
+          <h2>Why Video Can Make Taking Photos Alone Feel More Natural</h2>
+
+          <p>Photos &amp; Camera Confidence</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
+
+      <a
+        class="article-list-item"
+        href="/articles/what-should-you-actually-do-when-someone-is-taking-your-photo/"
+      >
+        <span class="article-list-number">03</span>
+
+        <div>
+          <h2>
+            What Should You Actually Do When Someone Is Taking Your Photo?
+          </h2>
+
+          <p>Photos &amp; Camera Confidence</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
+
+      <a
+        class="article-list-item"
+        href="/articles/how-to-ask-someone-to-take-a-natural-photo-of-you/"
+      >
+        <span class="article-list-number">04</span>
+
+        <div>
+          <h2>How to Ask Someone to Take a Natural Photo of You</h2>
+
+          <p>Photos &amp; Camera Confidence</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
+
+      <a
+        class="article-list-item"
+        href="/articles/how-do-you-know-when-a-photo-actually-looks-natural/"
+      >
+        <span class="article-list-number">05</span>
+
+        <div>
+          <h2>How Do You Know When a Photo Actually Looks Natural?</h2>
+
+          <p>Photos &amp; Camera Confidence</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
+
+      <a
+        class="article-list-item"
+        href="/articles/why-you-look-better-in-the-mirror-than-in-photos/"
+      >
+        <span class="article-list-number">06</span>
+
+        <div>
+          <h2>Why You Look Better in the Mirror Than in Photos</h2>
+
+          <p>Photos &amp; Camera Confidence</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
+
+      <a
+        class="article-list-item"
+        href="/articles/how-to-choose-photos-for-a-dating-profile-without-overthinking-them/"
+      >
+        <span class="article-list-number">07</span>
+
+        <div>
+          <h2>
+            How to Choose Photos for a Dating Profile Without Overthinking Them
+          </h2>
+
+          <p>Dating Profile Photos</p>
+        </div>
+
+        <span class="article-list-arrow">→</span>
+      </a>
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  .articles-list {
+    padding-bottom: 160px;
+    border-top: 1px solid rgba(36, 36, 36, 0.12);
+  }
+
+  .article-list-item {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(36, 36, 36, 0.12);
+    text-decoration: none;
+  }
+
+  .article-list-number {
+    font-size: 12px;
+    color: var(--color-muted);
+  }
+
+  .article-list-item h2 {
+    margin: 0;
+    max-width: 760px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .article-list-item p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+
+  .article-list-arrow {
+    font-size: 20px;
+    transition: transform 180ms ease;
+  }
+
+  .article-list-item:hover .article-list-arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 640px) {
+    .articles-list {
+      padding-bottom: 100px;
+    }
+
+    .article-list-item {
+      grid-template-columns: 40px 1fr auto;
+      gap: 12px;
+      padding: 24px 0;
+    }
+
+    .article-list-item h2 {
+      font-size: 18px;
+    }
+  }
+</style>
