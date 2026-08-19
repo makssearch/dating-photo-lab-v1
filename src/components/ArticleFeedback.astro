@@ -10,6 +10,12 @@
 </section>
 
 <script>
+    interface Props {
+        article: string;
+    }
+
+    const { article } = Astro.props;
+
     document
         .querySelectorAll<HTMLElement>(".article-feedback")
         .forEach((feedback) => {
@@ -20,13 +26,47 @@
             );
 
             buttons.forEach((button) => {
-                button.addEventListener("click", () => {
+                button.addEventListener("click", async () => {
+                    const rawVote = button.dataset.feedback;
+
+                    const vote =
+                        rawVote === "yes"
+                            ? "yes"
+                            : rawVote === "no"
+                              ? "not_really"
+                              : null;
+
+                    if (!vote) {
+                        return;
+                    }
+
                     buttons.forEach((item) => {
                         item.disabled = true;
                     });
 
-                    if (thanks) {
-                        thanks.hidden = false;
+                    try {
+                        const response = await fetch("/api/article-feedback", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                article,
+                                vote,
+                            }),
+                        });
+
+                        if (!response.ok) {
+                            throw new Error("Feedback request failed.");
+                        }
+
+                        if (thanks) {
+                            thanks.hidden = false;
+                        }
+                    } catch {
+                        buttons.forEach((item) => {
+                            item.disabled = false;
+                        });
                     }
                 });
             });
