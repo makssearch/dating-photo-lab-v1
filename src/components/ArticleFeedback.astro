@@ -1,4 +1,16 @@
-<section class="article-feedback" aria-label="Article feedback">
+---
+interface Props {
+    article: string;
+}
+
+const { article } = Astro.props;
+---
+
+<section
+    class="article-feedback"
+    aria-label="Article feedback"
+    data-article={article}
+>
     <p class="article-feedback-question">Was this helpful?</p>
 
     <div class="article-feedback-actions">
@@ -10,15 +22,10 @@
 </section>
 
 <script>
-    interface Props {
-        article: string;
-    }
-
-    const { article } = Astro.props;
-
     document
         .querySelectorAll<HTMLElement>(".article-feedback")
         .forEach((feedback) => {
+            const article = feedback.dataset.article;
             const buttons =
                 feedback.querySelectorAll<HTMLButtonElement>("[data-feedback]");
             const thanks = feedback.querySelector<HTMLElement>(
