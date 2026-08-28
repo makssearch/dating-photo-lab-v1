@@ -20,7 +20,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             );
         }
 
-        if (body.vote !== "yes" && body.vote !== "no") {
+        if (body.vote !== "yes" && body.vote !== "not_really") {
             return Response.json(
                 { error: "Invalid vote." },
                 { status: 400 },
