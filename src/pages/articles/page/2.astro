@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="Articles — Dating Photo Lab"
+    description="Practical ideas for feeling more natural and confident in photos."
+>
+    <main class="articles-page">
+        <section class="articles-page-intro">
+            <p class="eyebrow">ARTICLES</p>
+
+            <h1>Ideas for feeling more natural in photos.</h1>
+
+            <p>
+                Practical thoughts on photos, confidence, and telling a better
+                story without trying too hard.
+            </p>
+        </section>
+
+        <section class="articles-list">
+            <a
+                class="article-list-item"
+                href="/articles/how-lighting-changes-the-way-you-look-in-photos/"
+            >
+                <span class="article-list-number">13</span>
+
+                <div>
+                    <h2>How Lighting Changes the Way You Look in Photos</h2>
+
+                    <p>Photos &amp; Camera Confidence</p>
+                </div>
+
+                <span class="article-list-arrow">→</span>
+            </a>
+        </section>
+
+        <nav class="pagination" aria-label="Article pagination">
+            <a href="/articles/">← Previous</a>
+        </nav>
+    </main>
+</BaseLayout>
+
+<style>
+    .articles-list {
+        padding-bottom: 80px;
+        border-top: 1px solid rgba(36, 36, 36, 0.12);
+    }
+
+    .article-list-item {
+        display: grid;
+        grid-template-columns: 64px 1fr auto;
+        align-items: center;
+        gap: 24px;
+        padding: 32px 0;
+        border-bottom: 1px solid rgba(36, 36, 36, 0.12);
+        text-decoration: none;
+    }
+
+    .article-list-number {
+        font-size: 12px;
+        color: var(--color-muted);
+    }
+
+    .article-list-item h2 {
+        margin: 0;
+        max-width: 760px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+    }
+
+    .article-list-item p {
+        margin: 8px 0 0;
+        font-size: 14px;
+        color: var(--color-muted);
+    }
+
+    .article-list-arrow {
+        font-size: 20px;
+        transition: transform 180ms ease;
+    }
+
+    .article-list-item:hover .article-list-arrow {
+        transform: translateX(4px);
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 160px;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    @media (max-width: 640px) {
+        .articles-list {
+            padding-bottom: 56px;
+        }
+
+        .article-list-item {
+            grid-template-columns: 40px 1fr auto;
+            gap: 12px;
+            padding: 24px 0;
+        }
+
+        .article-list-item h2 {
+            font-size: 18px;
+        }
+
+        .pagination {
+            padding-bottom: 100px;
+        }
+    }
+</style>

@@ -213,6 +213,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <span class="article-list-arrow">→</span>
       </a>
     </section>
+
+    <nav class="pagination" aria-label="Article pagination">
+      <a href="/articles/page/2/">Next →</a>
+    </nav>
   </main>
 </BaseLayout>
 
@@ -274,6 +278,23 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     .article-list-item h2 {
       font-size: 18px;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 160px;
+  }
+
+  .pagination a {
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  @media (max-width: 640px) {
+    .pagination {
+      padding-bottom: 100px;
     }
   }
 </style>
