@@ -36,7 +36,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
         </section>
 
         <nav class="pagination" aria-label="Article pagination">
-            <a href="/articles/">← Previous</a>
+            <a class="pagination-previous" href="/articles/">← Previous</a>
         </nav>
     </main>
 </BaseLayout>
@@ -89,6 +89,9 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     .pagination {
         display: flex;
         justify-content: flex-start;
+        gap: 40px;
+        max-width: 680px;
+        margin: 0 auto;
         padding-bottom: 160px;
     }
 
@@ -98,22 +101,14 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     }
 
     @media (max-width: 640px) {
-        .articles-list {
-            padding-bottom: 56px;
-        }
-
-        .article-list-item {
-            grid-template-columns: 40px 1fr auto;
-            gap: 12px;
-            padding: 24px 0;
-        }
-
-        .article-list-item h2 {
-            font-size: 18px;
-        }
-
         .pagination {
             padding-bottom: 100px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 12px 0;
+            font-size: 15px;
         }
     }
 </style>
